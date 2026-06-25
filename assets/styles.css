@@ -123,6 +123,9 @@ img { display: block; max-width: 100%; }
 .page-hero::after { content: ""; position: absolute; inset: 0; background: rgba(11,33,22,.62); }
 .hero .container, .page-hero .container { position: relative; z-index: 1; }
 .hero-copy { max-width: 42rem; padding-top: 4rem; }
+.hero-copy.centered-title { margin-inline: auto; text-align: center; }
+.hero-copy.centered-title .lead { margin-inline: auto; }
+.hero-copy.centered-title .actions { justify-content: center; }
 .eyebrow {
   display: inline-flex;
   align-items: center;
