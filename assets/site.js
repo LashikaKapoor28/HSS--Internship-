@@ -10,6 +10,23 @@ if (menuButton && mobileMenu) {
   menuButton.addEventListener("click", () => mobileMenu.classList.toggle("open"));
 }
 
+document.querySelectorAll(".nav-drop").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    const item = button.closest(".nav-item");
+    document.querySelectorAll(".nav-item.open").forEach((openItem) => {
+      if (openItem !== item) openItem.classList.remove("open");
+    });
+    item?.classList.toggle("open");
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".nav-item")) {
+    document.querySelectorAll(".nav-item.open").forEach((item) => item.classList.remove("open"));
+  }
+});
+
 document.querySelectorAll("[data-newsletter-form]").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
